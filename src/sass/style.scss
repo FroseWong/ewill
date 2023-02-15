@@ -443,10 +443,10 @@ select:focus {
         // outline: 2px solid #93bbf9;
       }
 
-      .wrong {
-        border: 2px solid #e06d6d;
-        // outline: 2px solid #e06d6d;
-      }
+      // .wrong {
+      //   border: 2px solid #e06d6d;
+      //   // outline: 2px solid #e06d6d;
+      // }
 
       .form-top {
         position: absolute;
@@ -534,6 +534,10 @@ select:focus {
           -moz-appearance: none; /* Firefox */
           -webkit-appearance: none; /* Safari and Chrome */
           appearance: none;
+
+          &.wrong {
+            border: red solid 1px;
+          }
         }
 
         // datalist永遠隱藏向下箭頭
