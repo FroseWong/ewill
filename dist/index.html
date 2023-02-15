@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>鎰威科技前端面試考題</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <div class="wrapper ewill" id="app" v-cloak>
+      <div class="top-background">
+        <div class="container top-info">
+          <h1>There is no one</h1>
+          <h2>who loves pain</h2>
+
+          <div class="btn-space">
+            <div class="btn"></div>
+            <img
+              class="form-btn"
+              src="./img/Button/form.png"
+              alt=""
+              @click="scrolltoForm"
+            />
+          </div>
+          <div class="light-blue">
+            <img class="boat" src="img/sup.svg" alt="" />
+            <img class="paddle" src="img/paddle.png" alt="" />
+            <img src="img/bubble.svg" alt="" class="middle-bubble" />
+            <img src="img/bubble.svg" alt="" class="smaill-bubble" />
+
+            <img class="yantai" src="img/supyantai.svg" alt="" />
+            <img class="fire" src="img/fire.svg" alt="" />
+            <div class="h3-space">
+              <img src="img/cactus.png" alt="" />
+              <h3>paragraph</h3>
+
+              <img src="img/cactus.png" alt="" />
+            </div>
+
+            <ul>
+              <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+            </ul>
+            <div class="h3-space">
+              <img src="img/cactus.png" alt="" />
+              <h3>paragraph</h3>
+              <img src="img/cactus.png" alt="" />
+            </div>
+            <ul>
+              <li>
+                Quisque sodales leo
+                <span class="underline">vitae vulputate auctor.</span>
+              </li>
+              <li>
+                Proin ac justo ut nisl tincidunt imperdiet.Maecenas viverra
+                libero a pellentesque blandit.
+              </li>
+              <li>
+                Cras tristique tellus id leo bibendum, eu dapibus nisl accumsan.
+              </li>
+              <li>
+                Donec ultrices sapien
+                <span class="border">vitae leo venenatis ullamcorper.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="wave"></div>
+      <div class="form-allspace" ref="form">
+        <div class="form container">
+          <div class="form-top">F O R M</div>
+          <img class="turtle" src="img/turtle.png" alt="" />
+          <div class="store-space each-space">
+            <label for="store">store <span class="hightlight">*</span></label>
+            <div class="input-div">
+              <img class="drop-down" src="./img/dropdown.png" alt="" />
+
+              <!-- <i class="fa-solid fa-caret-down"></i> -->
+
+              <input
+                list="store"
+                type="text"
+                name="store"
+                placeholder="placeholder text"
+                class="store-input"
+                :class="{ wrong:hintStore !== '' }"
+                @keyup="ifnoStore"
+                @blur="blurStore"
+                v-model.trim="inputStore"
+              />
+              <div class="hint" v-if="hintStore">{{hintStore}}</div>
+              <span class="no-result" v-if="noResult">no result</span>
+            </div>
+            <datalist id="store">
+              <option v-for="store in stores" :value="store">{{store}}</option>
+            </datalist>
+          </div>
+          <div class="name-space each-space">
+            <label for="name">name <span class="hightlight">*</span></label>
+            <input
+              type="text"
+              id="name"
+              v-model="inputName"
+              @input="checkName"
+              @blur="blurName"
+              placeholder="placeholder text"
+              :class="{ wrong:hintName !== '' }"
+            />
+            <div class="hint" v-if="hintName">{{hintName}}</div>
+          </div>
+
+          <div class="phone-space each-space">
+            <label for="phone">phone <span class="hightlight">*</span></label>
+            <input
+              id="phone"
+              type="number"
+              maxlength="10"
+              @input="checkNumber('inputPhone')"
+              @blur="blurPhone"
+              v-model="inputPhone"
+              placeholder="placeholder text"
+              :class="{ wrong:hintPhone !== '' }"
+            />
+            <div class="hint" v-if="hintPhone">{{hintPhone}}</div>
+          </div>
+          <div class="amount-space each-space">
+            <label for="amount"
+              >Amount of consumption <span class="hightlight">*</span></label
+            >
+            <input
+              type="number"
+              id="amount"
+              v-model="inputAmount"
+              @input="checkNumber('inputAmount')"
+              @blur="blurAmount"
+              placeholder="placeholder text"
+              :class="{ wrong:hintAmount !== '' }"
+            />
+            <div class="hint" v-if="hintAmount">{{hintAmount}}</div>
+          </div>
+
+          <div class="payment-space each-space">
+            <label for="payment"
+              >payment <span class="hightlight">*</span></label
+            >
+            <div class="input-div">
+              <!-- <i class="fa-solid fa-caret-down"></i> -->
+              <img class="drop-down" src="./img/dropdown.png" alt="" />
+              <select
+                name="payment"
+                id="payment"
+                v-model="inputPayment"
+                @blur="blurPayment"
+                :class="{ wrong:hintPayment !== '' }"
+              >
+                <option v-for="payment in payments" :value="payment">
+                  {{payment}}
+                </option>
+              </select>
+            </div>
+            <div class="hint" v-if="hintPayment">{{hintPayment}}</div>
+          </div>
+        </div>
+        <div
+          :class="['submit-btn',{success:submitBtnStatus === 'success'},{failure:submitBtnStatus === 'failure'}]"
+          @click="submit"
+        >
+          <img
+            v-if="submitBtnStatus=== 'success'"
+            src="./img/success.png"
+            alt=""
+          />
+          <img
+            v-if="submitBtnStatus=== 'failure'"
+            src="./img/failure.svg"
+            alt=""
+          />
+          {{submitBtnStatus}}
+        </div>
+        <div v-if="submitBtnStatus=== 'failure'" class="sub-text">
+          This person does not exist
+        </div>
+        <!-- <img
+          class="submit-btn"
+          src="img/Button/submit.png"
+          alt=""
+          @click="submit"
+        /> -->
+      </div>
+      <div class="awards-bg">
+        <div class="awards-space">
+          <div
+            v-for="award in awards"
+            :class="['awards',{green:award.color === 'green'},{blue:award.color === 'blue'}]"
+          >
+            <img
+              v-if="award.color === 'green'"
+              class="certificateA"
+              src="img/certificateA.svg"
+              alt=""
+            />
+            <img
+              v-if="award.color === 'blue'"
+              class="certificateD"
+              src="img/certificateD.svg"
+              alt=""
+            />
+            <span class="one-word">{{award.oneWord}}</span>
+            <div class="quantity">{{award.quantity}}</div>
+            <span class="detail">{{award.detail }}</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="time-space container">
+        <div class="time-p">
+          <div class="time">13.32</div>
+          who seeks after it and <br />
+          wants to have it
+        </div>
+
+        <img src="img/lighthouse.svg" alt="" class="lighthouse" />
+      </div>
+      <div class="bottom-space">
+        <p class="buttom-p">Neque porro quisquam<br />est qui dolorem!</p>
+        <img class="market" src="./img/market.svg" alt="" />
+      </div>
+    </div>
+    <script src="vender/jquery/jquery.js"></script>
+    <script src="vender/vue/vue.global.js"></script>
+    <script src="./js/script.js"></script>
+  </body>
+</html>
