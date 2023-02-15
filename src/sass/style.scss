@@ -608,6 +608,10 @@ select:focus {
 
       &:hover {
         animation: submit-hover 3s linear infinite;
+
+        @include sm {
+          animation: none;
+        }
       }
 
       @keyframes submit-hover {
@@ -655,7 +659,7 @@ select:focus {
 
       max-width: 630px;
       // width: 60vw;
-      background-color: red;
+      // background-color: red;
       margin: 0 auto;
 
       @include md {
