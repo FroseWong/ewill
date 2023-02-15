@@ -123,7 +123,7 @@ select:focus {
     background-image: url("../img/whitewaves.png");
     background-repeat: no-repeat;
     background-size: cover;
-    height: 634px;
+    // height: 634px;
     text-align: center;
 
     h1 {
@@ -650,7 +650,7 @@ select:focus {
 
       max-width: 630px;
       // width: 60vw;
-      // background-color: red;
+      background-color: red;
       margin: 0 auto;
 
       @include md {
