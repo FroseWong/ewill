@@ -125,6 +125,7 @@ select:focus {
     background-size: cover;
     // height: 634px;
     text-align: center;
+    padding-bottom: 50px;
 
     h1 {
       padding-top: 60px;
@@ -216,7 +217,7 @@ select:focus {
       background-color: $light-blue;
       border-radius: 20px;
       border: 2px solid $brown;
-      margin: 0 auto;
+      margin: 40px auto 0;
       position: relative;
 
       @include lg {
@@ -439,12 +440,12 @@ select:focus {
       #amount:focus,
       #payment:focus {
         border: 1px solid #93bbf9;
-        outline: 2px solid #93bbf9;
+        // outline: 2px solid #93bbf9;
       }
 
       .wrong {
         border: 1px solid #e06d6d;
-        outline: 2px solid #e06d6d;
+        // outline: 2px solid #e06d6d;
       }
 
       .form-top {
@@ -466,7 +467,7 @@ select:focus {
         //   letter-spacing: 5px;
         padding-left: 5px;
         font-size: 18px;
-        outline: 2px solid $brown;
+        border: 2px solid $brown;
 
         @include md {
           left: 40%;
@@ -683,7 +684,7 @@ select:focus {
 
         &.blue {
           .quantity {
-            outline: solid 1px $light-blue2;
+            border: solid 1px $light-blue2;
             color: $light-blue2;
           }
           .detail {
@@ -693,7 +694,7 @@ select:focus {
 
         &.green {
           .quantity {
-            outline: solid 1px $light-green;
+            border: solid 1px $light-green;
             color: $light-green;
           }
           .detail {
