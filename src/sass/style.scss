@@ -439,7 +439,7 @@ select:focus {
       #phone:focus,
       #amount:focus,
       #payment:focus {
-        border: 1px solid #93bbf9;
+        border: 2px solid #93bbf9;
         // outline: 2px solid #93bbf9;
       }
 
@@ -536,7 +536,7 @@ select:focus {
           appearance: none;
 
           &.wrong {
-            border: red solid 1px;
+            border: red solid 2px;
           }
         }
 
