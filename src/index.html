@@ -122,6 +122,8 @@
             <input
               id="phone"
               type="number"
+              pattern="[0-9]*"
+              inputmode="numeric"
               maxlength="10"
               @input="checkNumber('inputPhone')"
               @blur="blurPhone"
@@ -138,6 +140,8 @@
             <input
               type="number"
               id="amount"
+              pattern="[0-9]*"
+              inputmode="numeric"
               v-model="inputAmount"
               @input="checkNumber('inputAmount')"
               @blur="blurAmount"
