@@ -649,6 +649,7 @@ select:focus {
       text-align: center;
       margin-top: 10px;
       color: red;
+      font-size: 14px;
     }
   }
 
@@ -736,6 +737,17 @@ select:focus {
           color: white;
           font-weight: bold;
         }
+
+        &.blue {
+          .one-word {
+            position: absolute;
+            top: -5px;
+            left: 88px;
+            color: white;
+            font-weight: bold;
+          }
+        }
+
         .quantity {
           width: 45px;
           height: 23px;
