@@ -97,7 +97,8 @@ li {
 }
 
 * {
-  font-family: Arial, Helvetica, sans-serif;
+  // font-family: Arial, Helvetica, sans-serif;
+  // font-family: "Poppins", sans-serif;
 }
 
 [v-cloak] {
@@ -126,6 +127,7 @@ select:focus {
     // height: 634px;
     text-align: center;
     padding-bottom: 50px;
+    font-family: "Poppins", sans-serif;
 
     h1 {
       padding-top: 60px;
@@ -420,6 +422,7 @@ select:focus {
     padding-top: 90px;
     padding-bottom: 50px;
     .form {
+      font-family: "Poppins", sans-serif;
       width: 808px;
       background-color: white;
       margin: 0 auto 40px;
@@ -451,6 +454,7 @@ select:focus {
       // }
 
       .form-top {
+        // font-family: "Poppins", sans-serif;
         position: absolute;
         top: -3%;
         left: 43%;
@@ -588,6 +592,7 @@ select:focus {
     }
 
     .submit-btn {
+      font-family: "Poppins", sans-serif;
       display: block;
       width: 200px;
       height: 57px;
@@ -686,7 +691,7 @@ select:focus {
         margin-right: 15px;
         margin-bottom: 40px;
         position: relative;
-
+        font-family: "Poppins", sans-serif;
         @include sm {
           margin-left: 0px;
           margin-right: 0px;
@@ -764,6 +769,7 @@ select:focus {
     text-align: center;
     padding-bottom: 30px;
     .time-p {
+      font-family: "Poppins", sans-serif;
       display: block;
       // background-color: red;
       width: 300px;
@@ -821,6 +827,7 @@ select:focus {
       line-height: 2;
       color: white;
       margin-bottom: 30px;
+      font-family: "Poppins", sans-serif;
     }
     .market {
       display: block;
